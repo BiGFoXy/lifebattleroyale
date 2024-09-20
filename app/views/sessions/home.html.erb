@@ -1,0 +1,8 @@
+<h1> Home page </h1>
+<%= notice %>
+<%= render "login_options" if session[:user_id].nil? %>
+
+<% if !session[:user_id].nil? %>
+<%= link_to "Play", "/play" %>
+<%= link_to "Log Out", "/logout" %>
+<% end %>

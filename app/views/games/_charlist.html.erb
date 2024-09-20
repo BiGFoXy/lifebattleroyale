@@ -1,0 +1,22 @@
+<h2> Character list: </h2>
+<%- @characters.each do |character| %>
+<div> 
+<%= character.name %> 
+Position: <%= character.status %> (
+    <% if character.status == 1 %> 
+    Peasant
+    <% elsif character.status == 2 %>
+    Knight
+    <% else %>
+    Nobleman
+    <%end%>
+    )
+Experience: <%= character.exp %>
+Gold: <%= character.gold %>
+Artifacts: 
+<% if character.artifacts.empty? %> None <%end%>
+<%- character.artifacts.each do |art| %>
+    <%= art.name %>,
+<%- end %>
+</div>
+<%- end %>

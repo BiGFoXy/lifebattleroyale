@@ -1,0 +1,14 @@
+<h1> Life battle royale <h1>
+<%= render "charlist" %>
+
+<h2><%= params[:last_winner] %></h2>
+
+<h2> Current fighters: </h2>
+<%- @fighters.each do |fighter| %>
+<div> 
+<%= fighter.name %> 
+</div>
+<%- end %>
+
+<%= button_to 'Next', {:controller => "games", :action => "next", :fighter1=> @fighters.first.id, :fighter2=>@fighters.last.id} , :method=>:post  %>
+<%= link_to "Home", '/' %>

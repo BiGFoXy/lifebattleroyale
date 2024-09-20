@@ -1,0 +1,20 @@
+<h1> The final winnner is: </h1>
+
+<%= @winner.name %> 
+Position: <%= @winner.status %> (
+    <% if @winner.status == 1 %> 
+    Peasant
+    <% elsif @winner.status == 2 %>
+    Knight
+    <% else %>
+    Nobleman
+    <%end%>
+    )
+Experience: <%= @winner.exp %>
+Gold: <%= @winner.gold %>
+Artifacts: 
+<% if @winner.artifacts.empty? %> None <%end%>
+<%- @winner.artifacts.each do |art| %>
+    <%= art.name %>,
+<%- end %>
+<%= link_to "Home", '/' %>

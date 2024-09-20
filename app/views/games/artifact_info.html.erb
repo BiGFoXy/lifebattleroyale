@@ -1,0 +1,10 @@
+<h1> Artifacts </h1>
+
+<%- @artifacts.each do |artifact| %>
+<div>
+<%= artifact.name %> - 
+<%= artifact.description %>
+</div>
+<%- end %>
+
+<%= link_to "Home", '/' %>

@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  characterId: 1
+  artifactId: 1
+
+two:
+  characterId: 1
+  artifactId: 1
