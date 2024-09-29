@@ -1,0 +1,68 @@
+<h2> Character list: </h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Race</th>
+    <th>Position</th>
+    <th>Experience</th>
+    <th>Gold</th>
+    <th>Artifacts</th>
+  </tr>
+    <%- @characters.each do |character| %>
+    <tr>
+    <td><%= character.name %></td>
+    <td>
+        <% if character.race == "Human" %> 
+        <%= image_tag("/images/human.png", width: 30) %>
+        <% elsif character.race == "Orc" %>
+        <%= image_tag("/images/orc.png", width: 30) %>
+        <% elsif character.race == "Goblin" %>
+        <%= image_tag("/images/goblin.png", width: 30) %>
+        <% else%>
+        <%= image_tag("/images/elf.png", width: 30) %>
+        <%end%>
+    </td>
+    <td><%= character.status %> (
+        <% if character.status == 1 %> 
+        <%= image_tag("/images/pitchfork.png", width: 30) %>
+        <% elsif character.status == 2 %>
+        <%= image_tag("/images/sword.png", width: 30) %>
+        <% else %>
+        <%= image_tag("/images/crown.png", width: 30) %>
+        <%end%>
+        )
+    </td>
+        <td><%= character.exp %>
+        <%- if character.exp < 50 %>
+            <%= image_tag("/images/xp.png", width: 15) %>
+        <% elsif character.exp < 100 %>
+            <%= image_tag("/images/xp.png", width: 24) %>
+        <% else %>
+            <%= image_tag("/images/xp.png", width: 30) %>
+        <% end %>
+        </td>
+         </td>
+        <td><%= character.gold %>
+        <%- if character.gold < 500 %>
+            <%= image_tag("/images/coins_small.png", width: 30) %> 
+        <% elsif character.gold < 1000 %>
+            <%= image_tag("/images/coins_medium.png", width: 30) %> 
+        <% else %>
+            <%= image_tag("/images/coins_big.png", width: 30) %> 
+        <% end %>
+        </td>
+        <td>
+        <% if character.artifacts.empty? %> None <%end%>
+        <%- character.artifacts.each do |art| %>
+            <% if art.name == "Chalice of Greed" %> 
+            <%= image_tag("/images/chalice.png", width: 40) %>
+            <% elsif art.name == "Glove of Pride" %>
+            <%= image_tag("/images/glove.png", width: 40) %>
+            <% else %>
+            <%= image_tag("/images/book.png", width: 40) %>
+            <%end%>
+        <%- end %>
+        </td>
+    </tr>
+    <%- end %>
+</table>

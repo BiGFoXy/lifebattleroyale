@@ -1,0 +1,46 @@
+<%= stylesheet_link_tag "stylesheets" %>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<h1> Life battle royale <h1>
+<%= render "charlist" %>
+
+<h2><%= params[:last_winner] %></h2>
+
+<h2> Current fighters: </h2>
+<div class="fighter">
+<h3><%= @fighters[0].name %> </h3> 
+<% if @fighters[0].race == "Human" %> 
+        <%= image_tag("/images/human.png", width: 40) %>
+        <% elsif @fighters[0].race == "Orc" %>
+        <%= image_tag("/images/orc.png", width: 40) %>
+        <% elsif @fighters[0].race == "Goblin" %>
+        <%= image_tag("/images/goblin.png", width: 40) %>
+        <% else%>
+        <%= image_tag("/images/elf.png", width: 40) %>
+<%end%> 
+</div>
+<%= image_tag("/images/vs.png", width: 50) %>
+<div class="fighter">
+<h3><%= @fighters[1].name %> </h3>
+<% if @fighters[1].race == "Human" %> 
+        <%= image_tag("/images/human.png", width: 40) %>
+        <% elsif @fighters[1].race == "Orc" %>
+        <%= image_tag("/images/orc.png", width: 40) %>
+        <% elsif @fighters[1].race == "Goblin" %>
+        <%= image_tag("/images/goblin.png", width: 40) %>
+        <% else%>
+        <%= image_tag("/images/elf.png", width: 40) %>
+<%end%>
+</div>
+
+<div>
+<%- if @winstreak.winstreak != 0 %>
+<h2>Highest winstreak:</h2> <h3><%= @winstreak.name %></h3> with a winstreak of <%= @winstreak.winstreak %>!
+<%- end %>
+</div>
+<br>
+<%= button_to 'Next', {:controller => "games", :action => "next"} , :method=>:post  %>
+<div class="navbar">
+<%= link_to "Home", '/' %>
+</div>

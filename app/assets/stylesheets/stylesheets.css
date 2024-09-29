@@ -1,0 +1,114 @@
+html {
+    background-color: #F7F7F2
+}
+
+* {
+    text-align: center;
+    font-family: Roboto, Arial;
+    color: #121113;
+}
+
+*, *::before,*::after {
+    box-sizing: border-box;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    border: 0 solid transparent;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  body {
+    min-height: 100vh;
+    line-height: 1;
+    text-rendering: optimizeSpeed;
+  }
+
+.navbar :last-child {
+    margin-right: 0;
+}
+
+h1 {
+    padding: 20px;  
+}
+
+h2 {
+    padding: 10px;
+}
+
+h3, .winner {
+    color: #899878;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #222725;
+    border-radius: 10px;
+    background-color: #222725;
+}
+
+th {
+    color: #E4E6C3;
+}
+td {
+    padding: 0 10px;
+    border: 1px solid #222725;
+    background-color: #E4E6C3;
+    border-radius: 5px;
+}
+
+button:hover, input[type=submit]:hover {
+    background-color: #E4E6C3;
+    cursor: pointer;
+}
+
+input {
+    border: 1px solid #222725;
+    border-radius: 50px;
+    background-color: #E4E6C3;
+    padding: 5px;
+}
+
+button, input[type=submit] {
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #899878;
+    font-size: medium;
+    border: 1px solid #222725;
+}
+
+
+
+.navbar {
+    margin-top: 30px;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.navbar a, .navbar input {
+    display: inline-block;
+    background-color: #E4E6C3;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 50px;
+    color: #121113;
+    margin-right: 3vw;
+    border: 1px solid #222725;
+}
+
+.navbar a:hover, .navbar input:hover {
+    background-color: #899878;
+}
+
+.fighter {
+    display: inline-block;
+    width: 10vw;
+}
